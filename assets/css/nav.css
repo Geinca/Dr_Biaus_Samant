@@ -1,0 +1,218 @@
+/* Modern Professional Navbar Styles */
+:root {
+    --primary-color: #2a5a78;       /* Deep blue */
+    --secondary-color: #e89b85;     /* Coral */
+    --accent-color: #ff9066;        /* Orange */
+    --text-color: #333;
+    --light-text: #fff;
+    --transition-speed: 0.3s;
+    --nav-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--light-text);
+    box-shadow: var(--nav-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all var(--transition-speed) ease;
+}
+
+.logo img {
+    height: auto;
+    width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.03);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   align-items: center;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    background-color: #285e97;
+    color: var(--light-text);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(232, 155, 133, 0.4);
+    transition: all var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 155, 133, 0.6);
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+}
+
+/* Mobile Menu Toggle */
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: all var(--transition-speed) ease;
+}
+
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--light-text);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 3%;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1050;
+    }
+    
+    .nav-link {
+        color: var(--light-text);
+        font-size: 1.2rem;
+    }
+    
+    .nav-link::after {
+        background-color: var(--light-text);
+    }
+    
+    .menu-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+    
+    .menu-checkbox:checked ~ .menu-toggle .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-checkbox:checked ~ .menu-toggle .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-checkbox:checked ~ .menu-toggle .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .close-menu {
+        display: block;
+    }
+    
+  
+    
+    /* Show mobile CTA button */
+    .mobile-cta {
+        display: flex;
+        margin-top: 2rem;
+    }
+}
+
+/* Active State */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+
+
+
+
+
