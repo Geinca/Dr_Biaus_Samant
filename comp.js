@@ -339,6 +339,22 @@ function inittest(){
 }
 
 
+// video plays functionality
+
+function playVideo(element) {
+    var videoId = element.getAttribute('data-video-id');
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', 'true');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    
+    element.innerHTML = ''; // Remove thumbnail and play button
+    element.appendChild(iframe); // Insert the video player
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // Load hero section dynamically
@@ -389,12 +405,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("qualification").innerHTML = data;  // Initialize carousel after loading hero section
         });
 });
-
-
-
-
-
-
 
 
 function toggleEmergency(event) {
