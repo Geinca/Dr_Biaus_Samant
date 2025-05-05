@@ -12,33 +12,20 @@
 
 /* Top Bar Styling */
 .top-bar {
-    background-color: #f8f8f8;
+    background-color: #D2DEE0;
     padding: 10px 0;
     font-size: 14px;
     border-bottom: 1px solid #eee;
 }
 
-.top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 .logo-small img {
-    height: 40px;
+    width: 220px;
 }
 
-.contact-item {
+.contact-info{
     display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.contact-item i{
-    color: #2A5A78;
+    gap: 20px;
+    justify-content: center;
 }
 
 .top-bar-logo {
@@ -84,32 +71,12 @@
 }
 
 .nav-link {
-    position: relative;
+    position: relative; /* Required for absolute positioning of ::after */
+    padding-right: 10px; /* Add space for the right border */
+    border-right: 1px solid black;
+    color: #43341E;
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    transition: color var(--transition-speed) ease;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width var(--transition-speed) ease;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-.nav-link:hover::after {
-    width: 100%;
+    font-size: 14px;
 }
 
 /* Call-to-Action Button */
@@ -117,7 +84,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
+    padding: 0.6rem 1.4rem;
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     background-color: #285e97;
     color: var(--light-text);
@@ -172,13 +139,8 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .contact-info {
-        gap: 15px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
-        text-align: center;
+    .top-bar {
+       display: none;
     }
     
     .contact-item i {
@@ -190,6 +152,10 @@
     
     .nav-links {
         gap: 1rem;
+    }
+
+    .nav-link {
+        border: none;
     }
 }
 
@@ -205,9 +171,6 @@
         gap: 0;
     }
     
-    .logo-small {
-        display: none;
-    }
     .hamburger {
         display: flex;
     }
