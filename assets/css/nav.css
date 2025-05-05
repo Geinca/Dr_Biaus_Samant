@@ -12,10 +12,10 @@
 
 /* Top Bar Styling */
 .top-bar {
-    background-color: #f5f5f5;
-    padding: 8px 20px;
+    background-color: #f8f8f8;
+    padding: 10px 0;
     font-size: 14px;
-    color: #333;
+    border-bottom: 1px solid #eee;
 }
 
 .top-bar-content {
@@ -23,23 +23,27 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .logo-small img {
     height: 40px;
 }
 
-.contact-info {
+.contact-item {
     display: flex;
-    gap: 30px;
     align-items: center;
-    font-size: 14px;
+    gap: 5px;
 }
 
-.contact-info i {
-    margin-right: 6px;
-    color: #007BFF;
+.contact-item i{
+    color: #2A5A78;
+}
+
+.top-bar-logo {
+    height: 40px;
+    width: auto;
 }
 
 /* Navbar stays the same, you can adjust padding/margin if needed */
@@ -168,6 +172,18 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    .contact-info {
+        gap: 15px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-item i {
+        font-size: 16px;
+    }
     .navbar {
         padding: 1rem 3%;
     }
@@ -178,6 +194,20 @@
 }
 
 @media (max-width: 768px) {
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-info {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+    }
+    
+    .logo-small {
+        display: none;
+    }
     .hamburger {
         display: flex;
     }
@@ -233,6 +263,16 @@
     .mobile-cta {
         display: flex;
         margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 8px 0;
+    }
+    
+    .contact-item i {
+        font-size: 14px;
     }
 }
 
