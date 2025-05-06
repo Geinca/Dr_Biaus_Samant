@@ -12,20 +12,40 @@
 
 /* Top Bar Styling */
 .top-bar {
-    background-color: #D2DEE0;
-    padding: 10px 0;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    padding: 8px 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo-small img {
     width: 220px;
 }
 
-.contact-info{
+.contact-info {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.contact-item .icon {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #F39677;
+}
+
+.contact-text {
+    color: #fff;
 }
 
 .top-bar-logo {

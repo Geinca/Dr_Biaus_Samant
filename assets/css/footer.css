@@ -103,38 +103,51 @@
 .subscribe-box {
     display: flex;
     border: 1px solid #e89b85;
-    border-radius: 6px;
+    border-radius: 999px;
     overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 300px;
 }
 
 .subscribe-box input {
-    padding: 12px;
+    flex: 1;
+    padding: 10px 14px;
     border: none;
     outline: none;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: 0.3s;
-    width: 100%;
+    font-size: 15px;
+    border-radius: 999px 0 0 999px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #333;
 }
 
 .subscribe-box input::placeholder {
     color: #e89b85;
 }
 
+.subscribe-box input:focus {
+    background-color: #fffaf9;
+}
+
 .subscribe-btn {
     background: #e89b85;
     border: none;
-    padding: 12px 20px;
+    padding: 14px 10px;
     color: white;
     font-weight: bold;
+    font-size: 13px;
+    border-radius: 0 999px 999px 0;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .subscribe-btn:hover {
-    background: white;
-    color: #e89b85;
+    background: #a33415;
+    color: #fff;
+    border-left: 1px solid #e89b85;
 }
+
 
 /* Footer Bottom */
 .footer-bottom {
