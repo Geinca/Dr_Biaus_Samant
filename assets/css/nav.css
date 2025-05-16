@@ -53,13 +53,10 @@
     width: auto;
 }
 
-/* Navbar stays the same, you can adjust padding/margin if needed */
-
-
 /* Base Navbar Styles */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 1rem 5%;
     background-color: var(--light-text);
@@ -83,20 +80,25 @@
 /* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 2.2rem;
     list-style: none;
-    margin: 0;
+    margin-left: 0.5rem;
     padding: 0;
    align-items: center;
 }
 
 .nav-link {
     position: relative; /* Required for absolute positioning of ::after */
-    padding-right: 10px; /* Add space for the right border */
-    border-right: 1px solid black;
-    color: #43341E;
+    border-right: 1px solid #FF3038;
+    color: #008DFF;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    padding: 0 18px;
+    transition: 0.5s;
+}
+
+.nav-link:hover{
+    border-right: 1px solid #008DFF;
+    color: #FF3038;
 }
 
 /* Call-to-Action Button */
@@ -115,6 +117,7 @@
     transition: all var(--transition-speed) ease;
     border: none;
     cursor: pointer;
+    margin-left: 7rem;
 }
 
 .cta-button:hover {
